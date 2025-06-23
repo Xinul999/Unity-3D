@@ -14,6 +14,13 @@ public class persitentUI : MonoBehaviour
         
     }
     void Awake() {
-        DontDestroyOnLoad(this.gameObject);
+        if (GameObject.FindGameObjectsWithTag("Canvas").Length == 1) {
+            DontDestroyOnLoad(gameObject);   
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

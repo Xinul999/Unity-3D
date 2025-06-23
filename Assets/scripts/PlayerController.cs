@@ -4,16 +4,18 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //[SerializeField]private CharacterController character;
+    private GameManager gameManager;
     public float speed = 5.0f;
     private CharacterController controller;
 
     void Start() {
         controller = GetComponent<CharacterController>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
     {
-        if (!GameManager.Instance.GetGameOver()) {
+        if (!gameManager.GetGameOver()) {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 

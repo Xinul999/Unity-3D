@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    //public static GameManager Instance;
     [SerializeField] private Timer timerGlobaleGame;
+    [SerializeField] private Timer timerQuizz;
     private bool isGameOver;
 
     private void Start() {
@@ -12,11 +14,14 @@ public class GameManager : MonoBehaviour
     }
 
     void Awake() {
-        if (Instance == null) {
-            Instance = this;
-            isGameOver = false;
-        }
-        DontDestroyOnLoad(this.gameObject);
+       isGameOver = false;
+       if (GameObject.FindGameObjectsWithTag("GameManager").Length == 1) {
+           DontDestroyOnLoad(gameObject);   
+       }
+       else {
+           Destroy(gameObject);
+       }
+     
     }
 
     public bool GetGameOver() {
@@ -30,6 +35,14 @@ public class GameManager : MonoBehaviour
     public void DebugLog() {
         Debug.Log("Game Over: " + isGameOver);
     }
-    
+    public void ReloadScene() {
+        Debug.Log("Reloading Scene");
+        isGameOver = false;
+        timerGlobaleGame.StartTimer();
+        timerQuizz.PanelInvisible();
+        timerQuizz.ReInitializeTimer();
+        timerQuizz.SetTimer(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     
 }

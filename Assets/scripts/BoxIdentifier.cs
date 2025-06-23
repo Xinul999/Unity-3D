@@ -9,7 +9,7 @@ public class BoxIdentifier : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OnTriggerEnter avec " + other.gameObject.name);
+        //Debug.Log("OnTriggerEnter avec " + other.gameObject.name);
         
         if (other.gameObject.TryGetComponent<PlayerController>(out PlayerController player)) {
             Debug.Log("BoxIdentifier " + boxID + " (trigger) détectée par " + player.name);  
