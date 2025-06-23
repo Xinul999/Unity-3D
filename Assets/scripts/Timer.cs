@@ -5,7 +5,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     [SerializeField] private float orignalTimer;
-    private GameManager gameManager;
+    private GameManager gameManager;    
     private float timer = 120f;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject finalGameOverPanel;
