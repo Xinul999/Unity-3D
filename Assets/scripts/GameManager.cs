@@ -44,5 +44,11 @@ public class GameManager : MonoBehaviour
         timerQuizz.SetTimer(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void ReloadQuizzTimer() {
+        timerQuizz.PanelInvisible();
+        timerQuizz.ReInitializeTimer();
+        timerQuizz.SetTimer(false);
+    }
     
 }
