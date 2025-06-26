@@ -165,6 +165,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4204700304320431946, guid: 677c62423248daf4595c12038dbc36df, type: 3}
+      propertyPath: boxLabel
+      value: autre reponse
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204700304320431946, guid: 677c62423248daf4595c12038dbc36df, type: 3}
       propertyPath: boxRigid
       value: 
       objectReference: {fileID: 1580628013}
@@ -954,6 +958,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4204700304320431946, guid: 677c62423248daf4595c12038dbc36df, type: 3}
+      propertyPath: boxText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204700304320431946, guid: 677c62423248daf4595c12038dbc36df, type: 3}
+      propertyPath: boxLabel
+      value: Le .
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204700304320431946, guid: 677c62423248daf4595c12038dbc36df, type: 3}
       propertyPath: boxRigid
       value: 
       objectReference: {fileID: 12202874}
@@ -1057,6 +1069,10 @@ PrefabInstance:
     - target: {fileID: 4204700304320431946, guid: 677c62423248daf4595c12038dbc36df, type: 3}
       propertyPath: boxID
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204700304320431946, guid: 677c62423248daf4595c12038dbc36df, type: 3}
+      propertyPath: boxLabel
+      value: Le +
       objectReference: {fileID: 0}
     - target: {fileID: 4204700304320431946, guid: 677c62423248daf4595c12038dbc36df, type: 3}
       propertyPath: boxRigid
@@ -2218,6 +2234,10 @@ PrefabInstance:
     - target: {fileID: 4204700304320431946, guid: 677c62423248daf4595c12038dbc36df, type: 3}
       propertyPath: boxID
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204700304320431946, guid: 677c62423248daf4595c12038dbc36df, type: 3}
+      propertyPath: boxLabel
+      value: Le #
       objectReference: {fileID: 0}
     - target: {fileID: 4204700304320431946, guid: 677c62423248daf4595c12038dbc36df, type: 3}
       propertyPath: boxRigid
