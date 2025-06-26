@@ -2,32 +2,45 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    
     public Transform target;
 
-    // Décalage en position par rapport à la cible + lissage pour mouvement fluide
-    public Vector3 offset = new Vector3(0, 5, -10);
-   
+
+    public float distance = 10.0f;
+    public float height = 5.0f;
+    
+
+    public float rotationSpeed = 100.0f;
+    
+
+    public float mouseSensitivity = 4.0f;
+    
+
+    private float currentRotation = 0.0f;
+    
+
     public float smoothSpeed = 0.125f;
 
-    // Field of View (60 est une valeur classique).
+ 
     public float fixedFOV = 60f;
 
-   
     void LateUpdate()
     {
-        // Position souhaitée = position du joueur + décalage
-        Vector3 desiredPosition = target.position + offset;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        
+        currentRotation += mouseX * rotationSpeed * Time.deltaTime;
+        
+        Vector3 desiredPosition = target.position;
+        desiredPosition.y += height; 
+        
+        desiredPosition.x += Mathf.Sin(currentRotation * Mathf.Deg2Rad) * distance;
+        desiredPosition.z += Mathf.Cos(currentRotation * Mathf.Deg2Rad) * distance;
         
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-
-        // Mise à jour position de la caméra
+        
         transform.position = smoothedPosition;
-
-        // Orientation caméra pour regarder la cible
+        
         transform.LookAt(target);
-
-        // Forcer le Field of View pour éviter un zoom inattendu
+        
         Camera cam = GetComponent<Camera>();
         if(cam != null)
         {
@@ -35,4 +48,3 @@ public class CameraFollow : MonoBehaviour
         }
     }
 }
-
