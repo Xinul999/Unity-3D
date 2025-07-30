@@ -1,3 +1,4 @@
+## Contributing
 # A Simple video on unity
 
 ### Clone the repo
